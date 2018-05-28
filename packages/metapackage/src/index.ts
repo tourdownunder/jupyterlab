@@ -36,6 +36,7 @@ import '@jupyterlab/mainmenu';
 import '@jupyterlab/mainmenu-extension';
 import '@jupyterlab/markdownviewer-extension';
 import '@jupyterlab/mathjax2-extension';
+import '@jupyterlab/media-extension';
 import '@jupyterlab/notebook';
 import '@jupyterlab/notebook-extension';
 import '@jupyterlab/observables';

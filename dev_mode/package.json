@@ -45,6 +45,7 @@
     "@jupyterlab/mainmenu-extension": "^0.5.2",
     "@jupyterlab/markdownviewer-extension": "^0.16.2",
     "@jupyterlab/mathjax2-extension": "^0.4.2",
+    "@jupyterlab/media-extension": "^0.0.1",
     "@jupyterlab/notebook": "^0.16.2",
     "@jupyterlab/notebook-extension": "^0.16.2",
     "@jupyterlab/observables": "^1.0.9",
@@ -147,6 +148,7 @@
     },
     "mimeExtensions": {
       "@jupyterlab/json-extension": "",
+      "@jupyterlab/media-extension": "",
       "@jupyterlab/pdf-extension": "",
       "@jupyterlab/vdom-extension": "",
       "@jupyterlab/vega3-extension": ""
@@ -238,6 +240,7 @@
       "@jupyterlab/mainmenu-extension": "../packages/mainmenu-extension",
       "@jupyterlab/markdownviewer-extension": "../packages/markdownviewer-extension",
       "@jupyterlab/mathjax2-extension": "../packages/mathjax2-extension",
+      "@jupyterlab/media-extension": "../packages/media-extension",
       "@jupyterlab/notebook": "../packages/notebook",
       "@jupyterlab/notebook-extension": "../packages/notebook-extension",
       "@jupyterlab/observables": "../packages/observables",

@@ -52,7 +52,7 @@ export
 const MEDIA_CONTAINER_CLASS = 'jp-MediaContainer';
 
 /**
- * A class for rendering a PDF document.
+ * A class for rendering a Media document.
  */
 export
 class RenderedMedia extends Widget implements IRenderMime.IRenderer {
@@ -65,15 +65,18 @@ class RenderedMedia extends Widget implements IRenderMime.IRenderer {
    */
   renderModel(model: IRenderMime.IMimeModel): Promise<void> {
     let mimeType = model.data.type as string;
-
+    alert('mimeType:' + mimeType);
     // if mime type is not in supporred array, do nothing.
     if (MIME_TYPES.indexOf(mimeType) === -1) {
       return Promise.resolve(void 0);
     }
+    // Use the first part of the mimeType for the source type
     let srcType = mimeType.split('/')[0];
+    alert('srcType:' + srcType);
     let data = model.data[mimeType] as string;
     // If there is no data, do nothing.
     if (!data) {
+      alert('Null data');
       return Promise.resolve(void 0);
     }
 
@@ -93,7 +96,7 @@ class RenderedMedia extends Widget implements IRenderMime.IRenderer {
   }
 
   /**
-   * Dispose of the resources held by the pdf widget.
+   * Dispose of the resources held by the media widget.
    */
   dispose() {
     try {
@@ -179,7 +182,7 @@ namespace Private {
   function b64toBlob(b64Data: string, contentType: string = '', sliceSize: number = 512): Blob {
     const byteCharacters = atob(b64Data);
     let byteArrays: Uint8Array[] = [];
-
+    alert('contentType:' + contentType);
     for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
       let slice = byteCharacters.slice(offset, offset + sliceSize);
 
