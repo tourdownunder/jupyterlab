@@ -1,6 +1,6 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
-import * as sanitize from 'sanitize-html';
+import sanitize from 'sanitize-html';
 
 
 export
@@ -87,6 +87,10 @@ class Sanitizer implements ISanitizer {
     transformTags: {
       // Set the "rel" attribute for <a> tags to "nofollow".
       'a': sanitize.simpleTransform('a', { 'rel': 'nofollow' })
+    },
+    allowedSchemesByTag: {
+      // Allow 'attachment:' img src (used for markdown cell attachments).
+      'img': sanitize.defaults.allowedSchemes.concat(['attachment']),
     }
   };
 }
